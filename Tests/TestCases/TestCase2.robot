@@ -7,13 +7,14 @@ Resource    ./Resources/Data/Selectors.robot
 Resource    ./Resources/Data/Credentials.robot
 
 *** Test Cases ***
-TC1: TestCase2
+TestCase2
     Get to login page
     Sign in with user credentials
     Add Item to the cart
     Check Added Items in Shopping cart
     Checkout Process
     Log    TestCase 2 Passed Successfully
+    Close Browser
 
 *** Keywords ***
 Get to login page

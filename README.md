@@ -13,12 +13,17 @@ pip install robotframework-browser
 ```
 
 ## Execution
+Execute single using the file name
 ```bash
-robot Tests/TestCases/TestCase2.robot
-```
+robot Tests/TestCases/TestCase1.robot
 or
+python -m robot Tests/TestCases/TestCase1.robot
+```
+Execute all the files using *
 ```bash
-python -m robot Tests/TestCases/TestCase2.robot
+robot Tests/TestCases/TestCase*.robot
+or
+python -m robot Tests/TestCases/TestCase*.robot
 ```
 
 ## Folder Structure

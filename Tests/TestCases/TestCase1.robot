@@ -7,7 +7,7 @@ Resource  ./Resources/Data/Selectors.robot
 Resource  ./Resources/Data/Credentials.robot
 
 *** Test Cases ***
-TC1: TestCase1
+TestCase1
     Get to login page
     Sign in with user credentials
     Add Item to the cart
@@ -15,6 +15,7 @@ TC1: TestCase1
     Remove the added Item
     Check Itemt removed from the cart
     Log    TestCase 1 Passed Successfully
+    Close Browser
 
 *** Keywords ***
 Get to login page
