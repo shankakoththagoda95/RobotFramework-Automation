@@ -4,13 +4,22 @@ This is a simple example for Automation using Robot Framework.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Robotframework.
+##Istallation guide 
+
+##Install Python latest version/ Upgrade 
+##Install pip (Python package manager to install packages) 
+##Restart the kernal 
+
+##Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Robotframework.
+
+##Then follow the following instructions to install the given packages (Robotframework/ browser/ faker) .  
 
 ```bash
 pip install robotframework
 pip install robotframework-faker
 pip install robotframework-browser
 ```
+#once completed execute the code as follows.
 
 ## Execution
 Execute single using the file name
