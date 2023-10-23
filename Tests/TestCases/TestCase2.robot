@@ -1,5 +1,4 @@
 *** Settings ***
-Library     Browser
 Library     FakerLibrary
 Library     SeleniumLibrary
 Resource    ./Resources/Data/Variables.robot
@@ -14,11 +13,11 @@ TestCase2
     Check Added Items in Shopping cart
     Checkout Process
     Log    TestCase 2 Passed Successfully
-    Close Browser
+    SeleniumLibrary.Close Browser
 
 *** Keywords ***
 Get to login page
-    Open Browser    ${URL}    ${BROWSER}
+    SeleniumLibrary.Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
 
 Sign in with user credentials
@@ -37,9 +36,9 @@ Add Item to the cart
 Check Added Items in Shopping cart
     Click Element   ${SHOPPING_CART} 
     Sleep    2s
-    ${Bike_Light_Label}=  Get Text   ${SHOPPING_CART_BIKE_LIGHT_TITLE}    
+    ${Bike_Light_Label}=  SeleniumLibrary.Get Text   ${SHOPPING_CART_BIKE_LIGHT_TITLE}    
     Should Be Equal As Strings  ${Bike_Light_Label}  Sauce Labs Bike Light
-    ${Fleece_Jacket_Label}=  Get Text   ${SHOPPING_CART_FLEECE_JACKET_TITLE}    
+    ${Fleece_Jacket_Label}=  SeleniumLibrary.Get Text   ${SHOPPING_CART_FLEECE_JACKET_TITLE}    
     Should Be Equal As Strings  ${Fleece_Jacket_Label}  Sauce Labs Fleece Jacket
     Sleep    2s
 
@@ -51,15 +50,15 @@ Checkout Process
     Input Text      ${CHECKOUT_ZIPCODE}    ${POSTALCODE}
     Click Element   ${CHECKOUT_CONTINUE}
     Sleep    2s
-    ${Bike_Light_Quantity}=  Get Text   ${SHOPPING_CART_BIKE_LIGHT_QUANTITY}    
+    ${Bike_Light_Quantity}=  SeleniumLibrary.Get Text   ${SHOPPING_CART_BIKE_LIGHT_QUANTITY}    
     Should Be Equal As Strings  ${Bike_Light_Quantity}  1
-    ${Fleece_Jacket_Quantity}=  Get Text   ${SHOPPING_CART_FLEECE_JACKET_QUANTITY}    
+    ${Fleece_Jacket_Quantity}=  SeleniumLibrary.Get Text   ${SHOPPING_CART_FLEECE_JACKET_QUANTITY}    
     Should Be Equal As Strings  ${Fleece_Jacket_Quantity}  1
-    ${Checkout_Total}=  Get Text   ${CHECKOUT_TOTAL_VALUE}    
+    ${Checkout_Total}=  SeleniumLibrary.Get Text   ${CHECKOUT_TOTAL_VALUE}    
     Should Be Equal As Strings  ${Checkout_Total}  Total: $64.78
     Sleep    2s
     Click Element   ${CHECKOUT_FINISH_BUTTON}
     Sleep    2s
-    ${Thank_you_message}=  Get Text   ${CHECKOUT_THANK_YOU_LABEL}   
+    ${Thank_you_message}=  SeleniumLibrary.Get Text   ${CHECKOUT_THANK_YOU_LABEL}   
     Should Be Equal As Strings  ${Thank_you_message}  Thank you for your order!
     Sleep    2s

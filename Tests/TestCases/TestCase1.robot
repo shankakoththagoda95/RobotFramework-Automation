@@ -1,5 +1,4 @@
 *** Settings ***
-Library     Browser
 Library     FakerLibrary
 Library     SeleniumLibrary
 Resource  ./Resources/Data/Variables.robot
@@ -15,11 +14,11 @@ TestCase1
     Remove the added Item
     Check Item removed from the cart
     Log    TestCase 1 Passed Successfully
-    Close Browser
+    SeleniumLibrary.Close Browser
 
 *** Keywords ***
 Get to login page
-    Open Browser    ${URL}    ${BROWSER}
+    SeleniumLibrary.Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
 
 Sign in with user credentials
@@ -34,7 +33,7 @@ Add Item to the cart
     Sleep    1s   
     
 Check Item added to the cart
-    ${cart_badge_text}=  Get Text   ${SHOPPING_CART_VALUE}    
+    ${cart_badge_text}=  SeleniumLibrary.Get Text   ${SHOPPING_CART_VALUE}    
     Should Be Equal As Strings  ${cart_badge_text}  1  
 
 Remove the added Item 

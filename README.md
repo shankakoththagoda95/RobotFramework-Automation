@@ -2,37 +2,42 @@
 
 This is a simple example for Automation using Robot Framework.
 
-## Installation
+## Installation Guide 
 
-##Istallation guide 
+### Install Python and Pip 
 
-##Install Python latest version/ Upgrade 
-##Install pip (Python package manager to install packages) 
-##Restart the kernal 
+- Install Python latest version/ Upgrade 
+- Install pip (Python package manager to install packages) 
+- Restart the kernal 
+- Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the necessary libraries.
 
-##Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Robotframework.
-
-##Then follow the following instructions to install the given packages (Robotframework/ browser/ faker) .  
+### Install Python Libraries.  
 
 ```bash
-pip install robotframework
-pip install robotframework-faker
-pip install robotframework-browser
-pip install robotframework-seleniumlibrary 
+pip install -r requirements.txt
 ```
-#once completed execute the code as follows.
+This will install all the libraries and respective supported versions for this project.
+
+### Robotframework Browser Configurations
+- Only supports for Python 3.8 or newer.
+- Install node.js from https://nodejs.org/en/download/
+- Install the node dependencies: run `rfbrowser init` in your terminal
+- if rfbrowser is not found, try `python -m Browser.entry init`
 
 ## Execution
-Execute single using the file name
+Execute tests using the below commands
 ```bash
 robot Tests/TestCases/TestCase1.robot
-or
+```
+
+```
 python -m robot Tests/TestCases/TestCase1.robot
 ```
 Execute all the files using *
 ```bash
 robot Tests/TestCases/TestCase*.robot
-or
+```
+```
 python -m robot Tests/TestCases/TestCase*.robot
 ```
 
@@ -51,12 +56,11 @@ python -m robot Tests/TestCases/TestCase*.robot
     TestSuite.robot
 --README.md
 --report.html
+--requirements.txt
 ```
 
 ## Contributing
-
-Pull requests are not welcome.
-Created by Shanka Koththagoda 
+Created and managed by Shanka Koththagoda 
 
 ## License
-free
+MIT License
