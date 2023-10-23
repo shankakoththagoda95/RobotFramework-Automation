@@ -18,6 +18,7 @@ This is a simple example for Automation using Robot Framework.
 pip install robotframework
 pip install robotframework-faker
 pip install robotframework-browser
+pip install robotframework-seleniumlibrary 
 ```
 #once completed execute the code as follows.
 
